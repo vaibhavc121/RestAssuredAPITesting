@@ -1,8 +1,10 @@
 package session06;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
@@ -24,6 +26,7 @@ public class ValidateJsonResponseBody
 
 		// read response body
 		ResponseBody responseBody = response.getBody();
+		System.out.println(responseBody.asString());
 		/*
 		 * String responseString = responseBody.asString();
 		 * System.out.println("response body: " + responseString);
@@ -33,7 +36,9 @@ public class ValidateJsonResponseBody
 		 */
 
 		// get json path view of response body
-
+		JsonPath jsonPathView = responseBody.jsonPath();
+		String firstname = jsonPathView.get("data[0].first_name");
+		Assert.assertEquals(firstname, "George");
 	}
 
 }
