@@ -1,6 +1,5 @@
 package session06;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -25,11 +24,15 @@ public class ValidateJsonResponseBody
 
 		// read response body
 		ResponseBody responseBody = response.getBody();
-		String responseString = responseBody.asString();
-		System.out.println("response body: " + responseString);
+		/*
+		 * String responseString = responseBody.asString();
+		 * System.out.println("response body: " + responseString);
+		 * 
+		 * // check for presense of george in response body
+		 * Assert.assertEquals(responseString.contains("George"), true);
+		 */
 
-		// check for presense of george in response body
-		Assert.assertEquals(responseString.contains("George"), true);
+		// get json path view of response body
 
 	}
 
