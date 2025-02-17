@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-15T18:52:59 IST" name="Default suite" finished-at="2025-02-15T18:53:02 IST" duration-ms="3122">
+  <suite started-at="2025-02-17T23:42:27 IST" name="Default suite" finished-at="2025-02-17T23:42:31 IST" duration-ms="4250">
     <groups>
     </groups>
-    <test started-at="2025-02-15T18:52:59 IST" name="Default test" finished-at="2025-02-15T18:53:02 IST" duration-ms="3122">
-      <class name="session07.QueryParameterDemo">
-        <test-method signature="QueryParameterDemo()[pri:0, instance:session07.QueryParameterDemo@55182842]" started-at="2025-02-15T18:52:59 IST" name="QueryParameterDemo" finished-at="2025-02-15T18:53:02 IST" duration-ms="3058" status="PASS">
+    <test started-at="2025-02-17T23:42:27 IST" name="Default test" finished-at="2025-02-17T23:42:31 IST" duration-ms="4250">
+      <class name="session09.AuthorizationDemo">
+        <test-method signature="bearerToken()[pri:0, instance:session09.AuthorizationDemo@55182842]" started-at="2025-02-17T23:42:27 IST" name="bearerToken" finished-at="2025-02-17T23:42:31 IST" duration-ms="4210" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- QueryParameterDemo -->
-      </class> <!-- session07.QueryParameterDemo -->
+        </test-method> <!-- bearerToken -->
+      </class> <!-- session09.AuthorizationDemo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
