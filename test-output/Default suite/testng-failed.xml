@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="session09.AuthorizationDemo">
+      <class name="session12_DeserialisationJson.DeserialisationJson">
         <methods>
-          <include name="bearerToken"/>
+          <include name="createUser"/>
         </methods>
-      </class> <!-- session09.AuthorizationDemo -->
+      </class> <!-- session12_DeserialisationJson.DeserialisationJson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
