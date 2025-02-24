@@ -1,10 +1,12 @@
-package session_QueryRequestSpecification;
+package session13_QueryRequestSpecification;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
 import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
@@ -39,6 +41,14 @@ public class QueryRequestSpecification
 		// get base URI
 		String retrieveBody = queryRequest.getBody();
 		System.out.println("body: " + retrieveBody);
+
+		// get request headers
+		Headers allHeaders = queryRequest.getHeaders();
+		System.out.println("---------request header-------");
+		for (Header h : allHeaders)
+		{
+			System.out.println("header name: " + h.getName() + "," + "header value: " + h.getValue());
+		}
 	}
 
 }
