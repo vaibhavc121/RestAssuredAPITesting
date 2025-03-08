@@ -1,5 +1,10 @@
 package session16_JSONArrayDemo;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
@@ -12,7 +17,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class JSONArrayDemo
 {
-	@Test
+	@Test(enabled = false)
 	public void createUserUsingJSONArray()
 	{
 		// create json object for users
@@ -45,6 +50,45 @@ public class JSONArrayDemo
 
 		Response response = reqSpec.baseUri("https://reqres.in/api/users").contentType(ContentType.JSON)
 				.body(usersPayload).post();
+
+		response.prettyPrint();
+
+		Assert.assertEquals(response.statusCode(), 201);
+	}
+
+	@Test
+	public void createJSONArrayUsingList()
+	{
+		// create json object for users
+
+		Map<String, Object> user1 = new HashMap<String, Object>();
+		user1.put("firstname", "vaibhav");
+		user1.put("lastname", "chavan");
+		user1.put("age", 11);
+		user1.put("salary", "1000");
+
+		Map<String, Object> user2 = new HashMap<String, Object>();
+		user2.put("firstname", "vaibhav1");
+		user2.put("lastname", "chavan");
+		user2.put("age", 11);
+		user2.put("salary", "1000");
+
+		Map<String, Object> user3 = new HashMap<String, Object>();
+		user3.put("firstname", "vaibhav2");
+		user3.put("lastname", "chavan");
+		user3.put("age", 11);
+		user3.put("salary", "1000");
+
+		// create json array using list
+		List<Map<String, Object>> jsonArrayListPayload = new ArrayList<Map<String, Object>>();
+		jsonArrayListPayload.add(user1);
+		jsonArrayListPayload.add(user2);
+		jsonArrayListPayload.add(user3);
+
+		RequestSpecification reqSpec = RestAssured.given();
+
+		Response response = reqSpec.baseUri("https://reqres.in/api/users").contentType(ContentType.JSON)
+				.body(jsonArrayListPayload).post();
 
 		response.prettyPrint();
 
